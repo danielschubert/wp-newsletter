@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Dan’s Newsletter Tool
-Plugin URI: http://www.schubertdaniel.de
-Description: Adds a Menu "Newsletter". Sends an email, if you wish.
+Plugin URI: https://github.com/danielschubert/wp-newsletter
+Description: Adds a Menu "Newsletter". Sends an email, if you wish. Uses mailgun if installed.
 Author: Daniel Schubert
-Version: 1.0
+Version: 1.1
 Author URI: http://www.schubertdaniel.de/
 */
 
@@ -95,6 +95,15 @@ class DanNewsletterPage
                     echo "<div style=\"color: green\"><strong>Newsletter Sent</strong></div>";
                 ?>
               </form>
+
+              <script type="text/javascript">
+                  jQuery(function() {
+                        jQuery('#snl').submit(function() {
+                            var c = confirm("R U Serious?? Really?");
+                            return c;
+                        });
+                  });
+              </script>
           </div>
     <?php
     }
