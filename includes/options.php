@@ -78,6 +78,7 @@ class DnlSettingsPage
             'newsletter_settings' // Section
         );
 
+
         add_settings_field(
             'newsletter_recipient',
             'Default Newsletter Recipient',
