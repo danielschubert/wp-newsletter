@@ -155,11 +155,14 @@ if( is_admin() ) {
         $newsletter->to = $_POST['nl-recepient'];
 
     if ( isset ($_POST['test']) || (isset ($_POST['notest']))){
-        $deliverytime = strtotime($_POST['date'] . "T" .  $_POST['time']);
         
+        if ( isset ($_POST['date'])){
+            $deliverytime = strtotime($_POST['date'] . "T" .  $_POST['time']);
+            $newsletter->deliverytime = $deliverytime;
+        }
+
         $newsletter->html_message = $_POST['html_content'];
         $newsletter->txt_message = $_POST['txt_content'];
-        $newsletter->deliverytime = $deliverytime;
          
         $newsletter->dnl_send_mail();
  
